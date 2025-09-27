@@ -1,8 +1,12 @@
 package model.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Department {
+public class Department implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	//Serializable tranforma os objetos em sequências de bytes, útil para que o objeto seja gravado em arquivo ou trafegado em rede
 	
 	private Integer id;
 	private String name;
@@ -45,8 +49,15 @@ public class Department {
 		if (getClass() != obj.getClass())
 			return false;
 		Department other = (Department) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name);
+		return Objects.equals(id, other.id);
 	}
+
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + "]";
+	}
+
+	
 	
 	
 	
