@@ -180,7 +180,7 @@ public class SellerDaoJDBC implements SellerDao{
 			
 			while (rs.next()) {
 				
-				Department dep = map.get(rs.getInt("DepartmentId"));//Controle para saber se o departamento existe
+				Department dep = map.get(rs.getInt("DepartmentId"));//Controle par	a saber se o departamento existe
 				
 				if (dep == null) {
 
